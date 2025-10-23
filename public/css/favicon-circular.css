@@ -1,0 +1,23 @@
+/* Circular Favicon CSS Approach */
+.favicon-circular {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* For browser tab favicons to appear circular */
+.favicon-preview {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #EEF5DB;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favicon-preview img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}

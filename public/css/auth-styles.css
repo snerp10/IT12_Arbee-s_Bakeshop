@@ -1,0 +1,555 @@
+/* Sea++ Bakery - Modern Authentication Styles */
+/* Using General CSS Colors: 50% EEF5DB (light green), 30% FFE21A (light yellow), 10% FE5F55 (coral), Dark: #333 */
+
+/* Ensure body allows scrolling */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* Modern minimalistic design with proper color distribution */
+.auth-modern-container {
+    min-height: 100vh;
+    /* 50% EEF5DB, 30% FFE21A, 20% blend for proper distribution */
+    background: linear-gradient(135deg, 
+        #EEF5DB 0%, 
+        #EEF5DB 25%, 
+        #ffeaa5 70%, 
+        #EEF5DB 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-family: 'Arial', sans-serif; /* Using general CSS font */
+    position: relative;
+    /* Removed overflow: hidden to allow scrolling */
+}
+
+/* Abstract background shapes using dark color #333 */
+.auth-bg-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: #fd1100; /* Dark color from general CSS */
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite;
+    filter: blur(1px);
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 5%;
+    left: -100px;
+    animation-delay: 0s;
+    opacity: 0.06;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    right: -60px;
+    animation-delay: 3s;
+    opacity: 0.08;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: -20%;
+    animation-delay: 6s;
+    opacity: 0.07;
+}
+
+.shape-4 {
+    width: 120px;
+    height: 120px;
+    bottom: 40%;
+    right: 10%;
+    animation-delay: 2s;
+    opacity: 0.05;
+}
+.shape-5 {
+    width: 250px;
+    height: 250px;
+    top: 20%;
+    right: -80px;
+    animation-delay: 4s;
+    opacity: 0.06;
+}
+.shape-6 {
+    width: 180px;
+    height: 180px;
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 5s;
+    opacity: 0.04;
+}
+
+/* Main content container */
+.auth-main-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Glass Mode Card - Enhanced */
+.auth-card {
+    background: rgba(255, 255, 255, 0.25); /* More transparent for glass effect */
+    backdrop-filter: blur(20px) saturate(150%); /* Enhanced glass effect */
+    -webkit-backdrop-filter: blur(20px) saturate(150%); /* Safari support */
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    box-shadow: 
+        0 25px 50px rgba(51, 51, 51, 0.15), /* Using #333 dark color */
+        0 0 0 1px rgba(255, 255, 255, 0.2); /* Glass border */
+    border: 1px solid rgba(33, 32, 30, 0.4); /* 30% FFE21A accent border */
+    text-align: center;
+    animation: slideUp 1s ease-out;
+    position: relative;
+}
+
+.auth-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(238, 245, 219, 0.1) 0%,  /* 50% EEF5DB */
+        rgba(255, 234, 165, 0.05) 50%, /* 30% FFE21A */
+        rgba(254, 95, 85, 0.02) 100%   /* 10% FE5F55 */
+    );
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+/* Logo in card - Made larger and more visible */
+.auth-card-logo {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-card-logo img {
+    max-height: 150px; /* Increased from 80px */
+    width: auto;
+    filter: drop-shadow(0 6px 12px rgba(228, 0, 0, 0.548)) /* Using #333 */ 
+            contrast(1.1) brightness(1.05); /* Enhanced visibility */
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.auth-card-logo:hover img {
+    transform: scale(1.02);
+}
+
+/* Title */
+.auth-card-title {
+    color: #333; /* Using general CSS dark color */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Form styling - Integrated with general CSS */
+
+/* Single column form layout */
+.auth-form-single {
+    margin-bottom: 1.0rem;
+}
+
+.form-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.0rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(254, 95, 85, 0.3);
+    text-align: center;
+}
+
+/* Checkbox styling */
+.auth-checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.auth-checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    accent-color: #FE5F55;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    z-index: 11;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.auth-checkbox-container input[type="checkbox"]:checked {
+    accent-color: #FE5F55;
+    border-color: #FE5F55;
+}
+
+.auth-checkbox-container input[type="checkbox"]:hover {
+    border-color: #FE5F55;
+    transform: scale(1.05);
+}
+
+.auth-checkbox-container input[type="checkbox"]:focus {
+    outline: 2px solid #FE5F55;
+    outline-offset: 2px;
+}
+
+.auth-checkbox-container label {
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.4;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 10;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.terms-link {
+    color: #FE5F55;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.terms-link:hover {
+    color: #e54e45;
+}
+
+.auth-form-group { 
+    margin-bottom: 1.0rem;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-form-group label {
+    display: none; /* Hidden for clean design */
+}
+
+/* Exception: Show labels for checkboxes */
+.auth-checkbox-container label {
+    display: block !important; /* Override the hidden label rule for checkboxes */
+}
+
+.auth-input-container {
+    position: relative;
+}
+
+.auth-input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333; /* Using general CSS dark color */
+    z-index: 5;
+    font-size: 1.0rem;
+    opacity: 0.7;
+}
+
+.auth-form-group input:not([type="checkbox"]),
+.auth-form-group select {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid rgba(255, 234, 165, 0.6); /* 30% FFE21A from general CSS */
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(238, 245, 219, 0.3); /* 50% EEF5DB from general CSS */
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #333; /* Using general CSS dark color */
+}
+
+.auth-form-group select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    cursor: pointer;
+}
+
+.auth-form-group input:not([type="checkbox"])::placeholder {
+    color: rgba(51, 51, 51, 0.6); /* Using #333 with transparency */
+    font-weight: 400;
+}
+
+.auth-form-group input:not([type="checkbox"]):focus,
+.auth-form-group select:focus {
+    outline: none;
+    border-color: #b22424; /* 10% #b22424 from general CSS */
+    box-shadow: 0 0 0 3px rgba(178, 36, 36, 0.2);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+}
+
+.auth-form-group input:not([type="checkbox"]):focus + .auth-input-icon {
+    color: #b22424; /* 10% #b22424 accent color */
+    opacity: 1;
+}
+
+/* Forgot password link */
+.auth-forgot-password {
+    text-align: left;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-forgot-password a {
+    color: rgba(51, 51, 51, 0.7); /* Using #333 with transparency */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.auth-forgot-password a:hover {
+    color: #FE5F55; /* 10% FE5F55 accent on hover */
+}
+
+/* Login button with FE5F55 accent (10% color from general CSS) */
+.auth-btn {
+    width: 100%;
+    background: rgba(254, 95, 85, 0.1); /* 10% FE5F55 subtle background */
+        color: #b22424;
+        padding: 1rem;
+        border: 2px solid #b22424;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.auth-btn:hover {
+    background: #b22424;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(254, 95, 85, 0.3);
+    backdrop-filter: blur(0px);
+}
+
+/* Sign up link */
+.auth-switch-link {
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-switch-link p {
+    color: rgba(51, 51, 51, 0.8); /* Using #333 with transparency */
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.auth-switch-link a {
+    color: #b22424; /* 10% #b22424 accent color from general CSS */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-switch-link a:hover {
+    color: #b22424;
+    text-decoration: underline;
+}
+
+.auth-footer {
+    background-color: #FFE21A;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid #b22424;
+    box-shadow: 0 -4px 15px rgba(178, 36, 36, 0.1);
+}
+
+.auth-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Error messages */
+.auth-error {
+    background-color: rgba(178, 36, 36, 0.1);
+    border: 1px solid #b22424;
+    color: #b22424;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Success messages */
+.auth-success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #27ae60;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Loading state */
+.auth-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.auth-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px) rotate(0deg); 
+    }
+    25% { 
+        transform: translateY(-10px) translateX(5px) rotate(1deg); 
+    }
+    50% { 
+        transform: translateY(-15px) translateX(-3px) rotate(-0.5deg); 
+    }
+    75% { 
+        transform: translateY(-8px) translateX(2px) rotate(0.5deg); 
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-modern-container {
+        padding: 1rem;
+        align-items: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        min-height: 100vh;
+    }
+    
+    .auth-card {
+        padding: 2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on mobile */
+        backdrop-filter: blur(15px) saturate(120%);
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        max-width: none;
+    }
+    
+    .auth-card-logo img {
+        max-height: 100px; /* Still larger than original, but scaled for mobile */
+    }
+    
+    .auth-card-title {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .auth-form-group {
+        margin-bottom: 1.25rem;
+    }
+    
+    /* Make shapes smaller and more subtle on mobile */
+    .shape-1, .shape-2, .shape-3, .shape-4 {
+        opacity: 0.04;
+        transform: scale(0.8);
+    }
+    
+    .auth-form-group input:not([type="checkbox"]),
+    .auth-form-group select {
+        font-size: 16px; /* Prevent zoom on iOS */
+        background: rgba(238, 245, 219, 0.4); /* Slightly more opaque */
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .auth-modern-container {
+        padding: 0.5rem;
+    }
+    
+    .auth-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+    
+    .auth-card-logo img {
+        max-height: 80px;
+    }
+    
+    .auth-card-title {
+        font-size: 1.5rem;
+    }
+}

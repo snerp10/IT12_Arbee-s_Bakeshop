@@ -1,8 +1,10 @@
 # Use official PHP image with Apache
 FROM php:8.2-apache
 
-# Enable extensions for Laravel
-RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
+# Install system dependencies for PostgreSQL and other extensions
+RUN apt-get update && \
+    apt-get install -y libpq-dev && \
+    docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
 # Enable Apache mod_rewrite (for Laravel routing)
 RUN a2enmod rewrite

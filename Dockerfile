@@ -24,8 +24,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Give permissions to storage and cache
-RUN chmod -R 775 storage bootstrap/cache
+# Give permissions and set ownership to storage and cache
+RUN chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 # Expose port 8080 for Render
 EXPOSE 8080

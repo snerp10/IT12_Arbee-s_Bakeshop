@@ -9,6 +9,9 @@ RUN apt-get update && \
 # Enable Apache mod_rewrite (for Laravel routing)
 RUN a2enmod rewrite
 
+# Set Apache DocumentRoot to /var/www/html/public (Laravel's public folder)
+RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+
 # Set the working directory
 WORKDIR /var/www/html
 
